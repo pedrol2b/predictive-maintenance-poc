@@ -1,0 +1,41 @@
+version: "3.8"
+
+services:
+  predictive-maintenance:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: predictive-maintenance-poc
+    volumes:
+      # Mount current directory for development (optional)
+      - .:/app
+    environment:
+      - PYTHONPATH=/app
+    # Override default command if needed
+    # command: python src/main.py
+
+  # Development service with interactive shell
+  predictive-maintenance-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: predictive-maintenance-dev
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONPATH=/app
+    command: /bin/bash
+    stdin_open: true
+    tty: true
+
+  # Service to run tests
+  predictive-maintenance-test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: predictive-maintenance-test
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONPATH=/app
+    command: python -m pytest src/__tests__ -v --cov=src --cov-report=term-missing

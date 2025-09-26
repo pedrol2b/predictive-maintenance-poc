@@ -1,0 +1,15 @@
+# Docker Compose override for development
+# This file extends docker-compose.yml with development-specific settings
+# Usage: docker-compose -f docker-compose.yml -f docker-compose.override.yml up
+
+version: "3.8"
+
+services:
+  predictive-maintenance:
+    # Override for development - mount source code for live editing
+    volumes:
+      - .:/app
+    # Add development environment variables
+    environment:
+      - PYTHONPATH=/app
+      - DEVELOPMENT=true
