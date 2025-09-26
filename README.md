@@ -1,5 +1,7 @@
 # predictive-maintenance-poc
 
+<img width="696" height="484" alt="Image" src="https://github.com/user-attachments/assets/0edca82d-8869-4fcf-850b-0ef9b69ec143" />
+
 ## Prova de Conceito (PoC) de Manutenção Preditiva
 
 Este projeto implementa uma Prova de Conceito simplificada para um sistema de Manutenção Preditiva utilizando Machine Learning. O sistema simula dados de sensores de máquinas industriais, treina um modelo de classificação para detectar falhas potenciais e demonstra a previsão de falhas em tempo real.
